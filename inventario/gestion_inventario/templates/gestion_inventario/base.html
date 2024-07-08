@@ -1,0 +1,81 @@
+<!-- gestion_inventario/templates/gestion_inventario/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gestor de Inventario{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo gris claro */
+        }
+        .navbar {
+            margin-bottom: 20px; /* Espacio debajo de la navbar */
+            background-color: #e3f2fd; /* Color de fondo azul claro */
+        }
+        .navbar-brand {
+            color: #1976d2; /* Color del texto del enlace de la marca */
+            font-weight: bold; /* Texto en negrita */
+        }
+        .navbar-nav .nav-link {
+            color: #1e88e5; /* Color del texto de los enlaces de la navbar */
+        }
+        .navbar-nav .nav-link:hover {
+            color: #0d47a1; /* Color del texto de los enlaces de la navbar al pasar el mouse */
+        }
+        .carousel-item img {
+            height: 400px; /* Altura fija para las imágenes del slider */
+            object-fit: cover; /* Ajuste de imagen para cubrir el contenedor */
+        }
+        .feature-icon {
+            font-size: 3rem; /* Tamaño del icono */
+            color: #03a9f4; /* Color del icono */
+        }
+        .feature-description {
+            font-size: 1.1rem; /* Tamaño del texto de la descripción */
+        }
+        .section-container {
+            background-color: #ffffff; /* Color de fondo blanco para las secciones */
+            padding: 40px; /* Espaciado interno de las secciones */
+            margin-bottom: 30px; /* Espaciado inferior entre secciones */
+            border-radius: 10px; /* Borde redondeado para las secciones */
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1); /* Sombra suave */
+        }
+        .footer {
+            background-color: #212121; /* Color de fondo del footer */
+            color: #ffffff; /* Color del texto del footer */
+            padding: 20px 0; /* Espaciado interno del footer */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'listar_articulos' %}">Inventario</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listar_articulos' %}">Artículos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'agregar_articulo' %}">Agregar Artículo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Volver al Inicio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- gestion_inventario/templates/gestion_inventario/eliminar_articulo.html -->
+{% extends 'gestion_inventario/base.html' %}
+
+{% block title %}Eliminar Artículo{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1>Eliminar Artículo</h1>
+    </div>
+    <div class="card-body">
+        <p>¿Estás seguro que deseas eliminar el artículo "<strong>{{ articulo.nombre }}</strong>"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+        <a class="btn btn-secondary mt-3" href="{% url 'listar_articulos' %}">Volver a la lista</a>
+    </div>
+</div>
+{% endblock %}

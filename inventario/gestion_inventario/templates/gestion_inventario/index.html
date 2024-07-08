@@ -1,0 +1,157 @@
+<!-- gestion_inventario/templates/gestion_inventario/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Gestor de Inventario</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo gris claro */
+        }
+        .navbar {
+            margin-bottom: 20px; /* Espacio debajo de la navbar */
+            background-color: #e3f2fd; /* Color de fondo azul claro */
+        }
+        .navbar-brand {
+            color: #1976d2; /* Color del texto del enlace de la marca */
+            font-weight: bold; /* Texto en negrita */
+        }
+        .navbar-nav .nav-link {
+            color: #1e88e5; /* Color del texto de los enlaces de la navbar */
+        }
+        .navbar-nav .nav-link:hover {
+            color: #0d47a1; /* Color del texto de los enlaces de la navbar al pasar el mouse */
+        }
+        .carousel-item img {
+            height: 400px; /* Altura fija para las imágenes del slider */
+            object-fit: cover; /* Ajuste de imagen para cubrir el contenedor */
+        }
+        .feature-icon {
+            font-size: 3rem; /* Tamaño del icono */
+            color: #03a9f4; /* Color del icono */
+        }
+        .feature-description {
+            font-size: 1.1rem; /* Tamaño del texto de la descripción */
+        }
+        .section-container {
+            background-color: #ffffff; /* Color de fondo blanco para las secciones */
+            padding: 40px; /* Espaciado interno de las secciones */
+            margin-bottom: 30px; /* Espaciado inferior entre secciones */
+            border-radius: 10px; /* Borde redondeado para las secciones */
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1); /* Sombra suave */
+        }
+        .footer {
+            background-color: #212121; /* Color de fondo del footer */
+            color: #ffffff; /* Color del texto del footer */
+            padding: 20px 0; /* Espaciado interno del footer */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'listar_articulos' %}">Inventario</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listar_articulos' %}">Artículos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'agregar_articulo' %}">Agregar Artículo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container section-container mt-4">
+        <!-- Slider de productos más vendidos -->
+        <div id="carouselProductosMasVendidos" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.comparapps.com/wp-content/uploads/2022/02/mejores-sistemas-de-inventarios.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Gestor inventarios</h5>
+                        <p>tu mejor opcion</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.administrabien.com/wp-content/uploads/2023/12/sistema-abc-1160x650.webp" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Gestor inventarios</h5>
+                        <p>tu mejor opcion</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://optimas.com/wp-content/uploads/2022/12/VMI-blog-3-e1671018276761.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Gestor inventarios</h5>
+                        <p>tu mejor opcion</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselProductosMasVendidos" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselProductosMasVendidos" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container section-container">
+        <!-- Sección de características -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-box-open feature-icon mr-3"></i>
+                    <div>
+                        <h3>Administración de Inventario</h3>
+                        <p class="feature-description">Administra fácilmente tus productos, realiza actualizaciones en tiempo real y mantén un registro organizado.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-sync-alt feature-icon mr-3"></i>
+                    <div>
+                        <h3>Actualizaciones Automatizadas</h3>
+                        <p class="feature-description">Obtén actualizaciones automáticas sobre el estado de tu inventario para tomar decisiones informadas de manera más eficiente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container section-container">
+        <!-- Descripción -->
+        <div class="mt-4">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                Bienvenido al Gestor de Inventario. Aquí puedes gestionar tus artículos de manera eficiente y fácil.
+                Utiliza nuestra herramienta para agregar, editar y eliminar artículos según tus necesidades.
+                Nuestra plataforma es intuitiva y te ayudará a mantener tu inventario organizado.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© 2024 Gestor de Inventario. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
